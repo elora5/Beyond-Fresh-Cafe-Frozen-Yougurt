@@ -1,0 +1,66 @@
+**Objective:**
+You are an expert Frontend Web Developer. Build a mobile-first, production-ready digital menu website for "Beyond Fresh Cafe Frozen Yougurt". This site strictly serves as a digital menu for dine-in and takeout customers. Do NOT build an online ordering or login system.
+
+**Tech Stack & Code Quality:**
+* Next.js (App Router, strict TypeScript)
+* Tailwind CSS
+* Framer Motion (60 FPS, smooth spring animations, stagger, fade-up)
+* Lucide React (Icons)
+* Strictly use React hooks, no Redux. Ensure modular, reusable components and no inline styles.
+
+**Design System (CRITICAL):**
+* Primary Color: `emerald-500` or `green-600` (to match the vibrant green in the logo)
+* Secondary/Text: `slate-900` or `blue-900` (to match the deep blues)
+* Accents: `purple-500` (to match the playful berry colors)
+* Styling: Use `rounded-2xl` or `rounded-full` for a soft, sticker-like aesthetic.
+* Typography: Use Poppins (Bold) for headings, Inter for body text, and SemiBold for prices.
+
+**Project Architecture:**
+Ensure the following folder structure and component hierarchy:
+* `app/` (page.tsx, layout.tsx)
+* `components/` (Header.tsx, Hero.tsx, MenuSection.tsx, MenuCard.tsx, Footer.tsx)
+* `data/` (menu.ts)
+* `public/`
+
+**Non-Functional Requirements:**
+* **Performance:** Use `next/image` with lazy loading. Optimize for Lighthouse >95.
+* **Accessibility:** Ensure WCAG AA compliance, semantic HTML, ARIA labels, and full keyboard navigation.
+* **Responsiveness:** Must look flawless on 320px, 375px, 768px, and 1024px breakpoints.
+
+**Development Workflow (CRITICAL INSTRUCTION):**
+Execute this project in the following sequential phases. **Stop after completing each phase.** Do not move to the next phase until I explicitly confirm it is acceptable. 
+
+---
+
+### Phase 1: Setup & Global Layout
+1. Initialize the project with the designated architecture.
+2. Build `Header.tsx` (sticky top bar, Logo/Name, Menu/About/Contact links, and a "Visit Us" button).
+3. Build `Footer.tsx` (Address, Phone, Email, Hours of Operation, and placeholder space for Google/Yelp reviews).
+**Stop and wait for my confirmation.**
+
+### Phase 2: Animated Hero Section
+1. Build `Hero.tsx` using Framer Motion (fade-up).
+2. Hardcode Headline: "Fresh, Healthy & Delicious Meals, Orchestrated."
+3. Hardcode Subheadline: "Quality standards you can verify in every bowl, wrap, and frozen yogurt."
+4. Hardcode Trust Signal: "Loved by thousands of locals for our signature wraps, fresh smoothies, and frozen yogurt."
+5. Add a "Scroll to Menu" button. 
+**Stop and wait for my confirmation.**
+
+### Phase 3: Data Parsing & Architecture
+1. Read the attached official menu document provided in this chat.
+2. Create `data/menu.ts`. Extract all categories, items, descriptions, and prices from the document and format them into strict TypeScript arrays/objects. 
+3. Ensure every single category is accurately captured, specifically: Signature wraps, Grilled Paninis, Protein salad bowls, Soups, Squeezes, Smoothies, Power Bowls, Breakfast, Breakfast Sandwiches, Breakfast bowls, Burgers & Sides, Submarines, Quesadillas, Side salad bowls, Hot Beverages, and Cold Beverages (Frozen yogurt).
+**Stop and wait for my confirmation.**
+
+### Phase 4: The Digital Menu UI & Animations
+1. Build `MenuSection.tsx` and `MenuCard.tsx`.
+2. Map over `data/menu.ts` to render the items in clean, mobile-optimized grids.
+3. Add Framer Motion stagger animations so cards reveal smoothly on scroll. Include interactive hover lift states on all cards.
+**Stop and wait for my confirmation.**
+
+### Phase 5: Automated Image Sourcing 
+1. Update `data/menu.ts` to include an `imageUrl` for every item.
+2. Use a reliable dynamic image service (like Unsplash Source API or placehold.co). 
+3. Dynamically pass the name of the menu item (e.g., "Falafel Wrap", "Frozen Yogurt") into the URL to generate a relevant placeholder stock photo. 
+4. Integrate these into the `next/image` components in `MenuCard.tsx` with object-cover and rounded corners.
+**Stop and wait for my final confirmation.**
